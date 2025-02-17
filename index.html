@@ -13,7 +13,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         }
 
         .container {
@@ -21,18 +21,19 @@
             background-color: #ffffff;
             padding: 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 90%;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .container:hover {
             transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 26px;
             color: #333;
             margin-bottom: 20px;
         }
@@ -45,17 +46,19 @@
             border-radius: 6px;
             background-color: #007bff;
             color: white;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
             background-color: #0056b3;
+            transform: scale(1.05);
         }
 
         #factDisplay {
             margin-top: 20px;
             font-size: 18px;
             color: #555;
+            transition: color 0.3s ease;
         }
 
         /* Responsive styles */
@@ -65,7 +68,7 @@
             }
 
             h1 {
-                font-size: 20px;
+                font-size: 22px;
             }
 
             button {
@@ -101,6 +104,10 @@
             button.addEventListener('click', () => {
                 const randomIndex = Math.floor(Math.random() * facts.length);
                 factDisplay.textContent = facts[randomIndex];
+                factDisplay.style.color = '#007bff';
+                setTimeout(() => {
+                    factDisplay.style.color = '#555';
+                }, 500);
             });
         });
     </script>
