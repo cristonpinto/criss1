@@ -3,113 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Random Fact Generator</title>
+    <title>Hospital Management System</title>
     <style>
-        /* Base styles */
+        /* Base Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            background: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 90%;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+            padding: 0 2rem;
         }
 
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        h1, h2, h3 {
+            color: #263238;
         }
 
-        h1 {
-            font-size: 26px;
-            color: #333;
-            margin-bottom: 20px;
+        a {
+            color: #007bff;
+            text-decoration: none;
         }
 
-        button {
-            padding: 12px 24px;
-            font-size: 16px;
-            cursor: pointer;
+        /* Utility Classes */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            transition: background-color 0.3s ease;
             border: none;
-            border-radius: 6px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
             background-color: #007bff;
             color: white;
-            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        button:hover {
+        .btn-primary:hover {
             background-color: #0056b3;
-            transform: scale(1.05);
         }
 
-        #factDisplay {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #555;
-            transition: color 0.3s ease;
+        /* Header */
+        header {
+            background: #37474f;
+            color: white;
+            padding: 1rem 0;
         }
 
-        /* Responsive styles */
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-            h1 {
-                font-size: 22px;
-            }
+        /* Showcase */
+        #showcase {
+            background: url('https://placehold.it/1200x400') no-repeat center center/cover;
+            height: 400px;
+            position: relative;
+        }
 
-            button {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
+        #showcase .container {
+            text-align: center;
+            padding-top: 100px;
+        }
 
-            #factDisplay {
-                font-size: 16px;
-            }
+        #showcase h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* What We Do */
+        #what .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        #what h3 {
+            margin-top: 0;
+        }
+
+        /* Footer */
+        footer {
+            background: #37474f;
+            color: white;
+            text-align: center;
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Random Fact Generator</h1>
-        <button id="generateFact">Generate Fact</button>
-        <p id="factDisplay">Click the button to see a random fact!</p>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const facts = [
-                "Honey never spoils.",
-                "Bananas are berries.",
-                "There are more stars in the universe than grains of sand on Earth.",
-                "Octopuses have three hearts.",
-                "A day on Venus is longer than a year on Venus."
-            ];
+    <header>
+        <div class="container">
+            <h1>Hospital Name</h1>
+            <nav>
+                <ul>
+                    <li><a href="#what">What We Do</a></li>
+                    <li><a href="#" class="btn btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            const button = document.getElementById('generateFact');
-            const factDisplay = document.getElementById('factDisplay');
+    <section id="showcase">
+        <div class="container">
+            <h1>Your Health, Our Priority</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#" class="btn btn-primary">Learn More</a>
+        </div>
+    </section>
 
-            button.addEventListener('click', () => {
-                const randomIndex = Math.floor(Math.random() * facts.length);
-                factDisplay.textContent = facts[randomIndex];
-                factDisplay.style.color = '#007bff';
-                setTimeout(() => {
-                    factDisplay.style.color = '#555';
-                }, 500);
-            });
-        });
-    </script>
+    <section id="what">
+        <div class="container">
+            <div>
+                <h3><i class="fas fa-user-md"></i> Specialized Care</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div>
+                <h3><i class="fas fa-heartbeat"></i> Advanced Technology</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div>
+                <h3><i class="fas fa-hospital"></i> 24/7 Availability</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2023, Hospital Management System</p>
+    </footer>
 </body>
 </html>
+
