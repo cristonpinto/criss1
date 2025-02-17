@@ -3,143 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Management System</title>
+    <title>Advanced Web Page</title>
     <style>
-        /* Base Styles */
+        /* Base styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background: #f4f4f4;
+            background: #f0f2f5;
             color: #333;
-            line-height: 1.6;
         }
 
         .container {
             max-width: 1200px;
             margin: auto;
+            padding: 20px;
+        }
+
+        /* Card styles */
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
             overflow: hidden;
-            padding: 0 2rem;
+            transition: transform 0.3s ease;
         }
 
-        h1, h2, h3 {
-            color: #263238;
+        .card:hover {
+            transform: translateY(-5px);
         }
 
-        a {
-            color: #007bff;
-            text-decoration: none;
+        .card img {
+            width: 100%;
+            height: auto;
         }
 
-        /* Utility Classes */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            transition: background-color 0.3s ease;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
+        .card-content {
+            padding: 20px;
         }
 
-        .btn-primary {
-            background-color: #007bff;
-            color: white;
+        .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
-        .btn-primary:hover {
-            background-color: #0056b3;
+        .card-description {
+            font-size: 16px;
+            color: #555;
         }
 
-        /* Header */
-        header {
-            background: #37474f;
-            color: white;
-            padding: 1rem 0;
+        /* Slider styles */
+        .slider {
+            position: relative;
+            max-width: 100%;
+            margin: 40px auto;
+            overflow: hidden;
+            border-radius: 8px;
         }
 
-        header .container {
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .slider img {
+            width: 100%;
+            display: block;
+        }
+
+        .navigation {
+            position: absolute;
+            top: 50%;
+            width: 100%;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            transform: translateY(-50%);
         }
 
-        /* Showcase */
-        #showcase {
-            background: url('https://placehold.it/1200x400') no-repeat center center/cover;
-            height: 400px;
-            position: relative;
-        }
-
-        #showcase .container {
-            text-align: center;
-            padding-top: 100px;
-        }
-
-        #showcase h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-        }
-
-        /* What We Do */
-        #what .container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        #what h3 {
-            margin-top: 0;
-        }
-
-        /* Footer */
-        footer {
-            background: #37474f;
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
             color: white;
-            text-align: center;
-            padding: 1rem;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Hospital Name</h1>
-            <nav>
-                <ul>
-                    <li><a href="#what">What We Do</a></li>
-                    <li><a href="#" class="btn btn-primary">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="showcase">
-        <div class="container">
-            <h1>Your Health, Our Priority</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <a href="#" class="btn btn-primary">Learn More</a>
-        </div>
-    </section>
-
-    <section id="what">
-        <div class="container">
-            <div>
-                <h3><i class="fas fa-user-md"></i> Specialized Care</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div>
-                <h3><i class="fas fa-heartbeat"></i> Advanced Technology</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-            <div>
-                <h3><i class="fas fa-hospital"></i> 24/7 Availability</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <div class="container">
+        <h1>Welcome to Our Advanced Web Page</h1>
+        
+        <!-- Card Section -->
+        <div class="card">
+            <img src="https://via.placeholder.com/1200x400" alt="Card Image">
+            <div class="card-content">
+                <h2 class="card-title">Card Title</h2>
+                <p class="card-description">This is a description of the card. It provides additional information about the content.</p>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <p>Copyright &copy; 2023, Hospital Management System</p>
-    </footer>
+        <!-- Slider Section -->
+        <div class="slider">
+            <div class="slides">
+                <div class="slide"><img src="https://via.placeholder.com/1200x400/ff7f7f" alt="Slide 1"></div>
+                <div class="slide"><img src="https://via.placeholder.com/1200x400/7f7fff" alt="Slide 2"></div>
+                <div class="slide"><img src="https://via.placeholder.com/1200x400/7fff7f" alt="Slide 3"></div>
+            </div>
+            <div class="navigation">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slide = document.querySelectorAll('.slide');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+        let index = 0;
+
+        function showSlide(i) {
+            index += i;
+            if (index < 0) index = slide.length - 1;
+            if (index >= slide.length) index = 0;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        prev.addEventListener('click', () => showSlide(-1));
+        next.addEventListener('click', () => showSlide(1));
+    </script>
 </body>
 </html>
-
